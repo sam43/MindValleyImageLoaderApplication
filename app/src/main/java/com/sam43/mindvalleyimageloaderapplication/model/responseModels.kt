@@ -1,13 +1,8 @@
 package com.sam43.mindvalleyimageloaderapplication.model
-
 import com.google.gson.annotations.SerializedName
 
 data class GenericReS(
-    var data: ResponseImageList? = null,
-    var isSuccess: Boolean? = true
-)
-
-data class ResponseImageList(
+    var isSuccess: Boolean? = true,
     @SerializedName("categories")
     val resCategories: List<Category?>? = null,
     @SerializedName("color")
