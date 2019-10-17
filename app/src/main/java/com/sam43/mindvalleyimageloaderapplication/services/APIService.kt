@@ -8,5 +8,5 @@ import retrofit2.http.GET
 
 interface APIService {
     @GET("raw/wgkJgazE")
-    fun fetchImageList(): Deferred<Response<List<GenericReS>>>
+    fun fetchImageListAsync(): Deferred<Response<List<GenericReS>>>
 }

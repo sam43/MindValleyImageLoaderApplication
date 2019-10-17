@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.sam43.mindvalleyimageloaderapplication.R
@@ -99,7 +100,7 @@ class HomeFragment : Fragment() {
                 .into(root.rvImageList)
         }
         root.rvImageList.setHasFixedSize(true)
-        root.rvImageList.layoutManager =
-            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        root.rvImageList.layoutManager = LinearLayoutManager(context)
+        //root.rvImageList.addItemDecoration(GridItemDecoration(10, 2))
     }
 }

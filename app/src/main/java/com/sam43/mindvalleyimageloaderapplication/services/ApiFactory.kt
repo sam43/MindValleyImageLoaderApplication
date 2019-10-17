@@ -35,7 +35,7 @@ object ApiFactory {
 
     private fun retrofit(): Retrofit = Retrofit.Builder()
         .client(client)
-        .baseUrl("https://api.themoviedb.org/3/")
+        .baseUrl("https://pastebin.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()
