@@ -1,4 +1,4 @@
-package com.sam43.mindvalleyimageloaderapplication
+package com.sam43.mindvalleyimageloaderapplication.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.sam43.mindvalleyimageloaderapplication.R
 import com.sam43.mindvalleyimageloaderapplication.session.Session
 import com.sam43.mindvalleyimageloaderapplication.utils.ConnectivityReceiver
 import com.sam43.mindvalleyimageloaderapplication.utils.showNetworkMessage
@@ -38,7 +39,9 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_home,
+                R.id.navigation_dashboard,
+                R.id.navigation_notifications
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
