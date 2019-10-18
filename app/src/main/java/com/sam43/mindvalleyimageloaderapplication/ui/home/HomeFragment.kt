@@ -76,11 +76,11 @@ class HomeFragment : Fragment() {
                     itemView.context.getImageLoader(
                         item?.resUser?.resProfileImage?.resMedium.toString(),
                         ivUserProfile
-                    ).download(true)
+                    ).download()
                     itemView.context.getImageLoader(
                         item?.resUrls?.resFull.toString(),
                         ivItemImage
-                    ).download(true)
+                    ).download()
                     tvUserName.text = item?.resUser?.resUsername
                     tvName.text = item?.resUser?.resName
                     tvCountHeart.text = updatedCount.toString()

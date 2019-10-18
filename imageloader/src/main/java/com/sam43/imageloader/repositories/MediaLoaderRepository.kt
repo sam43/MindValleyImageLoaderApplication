@@ -20,13 +20,10 @@ internal object MediaLoaderRepository {
      */
     fun isCached(
         url: String,
-        isMemoryCache: Boolean = true,
+        //isMemoryCache: Boolean = true,
         callback: DownloaderCallback
     ): Boolean = synchronized(lock) {
-        val value =
-            if (isMemoryCache) component.getMemoryCache().get(url) else component.getDiskCache().get(
-                url
-            )
+        val value = component.getMemoryCache().get(url)
         if (value != null) {
             callback.onSuccess(value.first, value.second)
             return@synchronized true
@@ -40,14 +37,15 @@ internal object MediaLoaderRepository {
     fun getDownloader(
         isSynchronous: Boolean,
         url: String,
-        isMemoryCache: Boolean = true,
+        //isMemoryCache: Boolean = true,
         callback: DownloaderCallback
     ): Downloader = synchronized(lock) {
         val downloader = component.getDownloader()
         downloader.init(
             isSynchronous,
             url,
-            if (isMemoryCache) component.getMemoryCache() else component.getDiskCache(),
+            component.getMemoryCache(),
+            //if (isMemoryCache) component.getMemoryCache() else component.getDiskCache(),
             callback,
             component.getHttpOperationWrapper()
         )

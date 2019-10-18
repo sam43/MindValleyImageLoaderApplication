@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home,
-                R.id.navigation_dashboard,
-                R.id.navigation_notifications
+                R.id.navigation_download,
+                R.id.navigation_tests
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
