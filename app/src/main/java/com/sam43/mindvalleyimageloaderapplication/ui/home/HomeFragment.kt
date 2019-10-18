@@ -10,11 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.sam43.mindvalleyimageloaderapplication.R
 import com.sam43.mindvalleyimageloaderapplication.model.GenericReS
 import com.sam43.mindvalleyimageloaderapplication.utils.RecyclerAdapterUtil
+import com.sam43.mindvalleyimageloaderapplication.utils.loadImage
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomeFragment : Fragment() {
@@ -50,23 +50,6 @@ class HomeFragment : Fragment() {
         homeViewModel.unSplashedImagesLiveData.observe(viewLifecycleOwner, observeImageList)
     }
 
-    private fun test(list: List<Int>) {
-        RecyclerAdapterUtil.Builder(context!!, list, R.layout.pinterest_item)
-            .viewsList(
-                listOf(
-                    R.id.tvUserName
-                )
-            )
-            .bindView { _, item, _, innerViews ->
-                val tvName = innerViews[R.id.tvUserName] as TextView
-                tvName.text = item.toString()
-            }
-            .into(root.rvImageList)
-        root.rvImageList.setHasFixedSize(true)
-        root.rvImageList.layoutManager =
-            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-    }
-
     private fun showImageList(list: MutableList<GenericReS?>?) {
         list?.let {
             RecyclerAdapterUtil.Builder(context!!, it, R.layout.pinterest_item)
@@ -80,7 +63,7 @@ class HomeFragment : Fragment() {
                         R.id.ivUserImage
                     )
                 )
-                .bindView { _, item, _, innerViews ->
+                .bindView { itemView, item, _, innerViews ->
                     val tvUserName = innerViews[R.id.tvCaption] as TextView
                     val ivUserProfile = innerViews[R.id.ivUserImage] as ImageView
                     val ivItemImage = innerViews[R.id.ivImage] as ImageView
@@ -90,14 +73,23 @@ class HomeFragment : Fragment() {
                     var updatedCount = item?.resLikes
                     var flag = true
 
+                    loadImage(
+                        item?.resUser?.resProfileImage?.resMedium.toString(),
+                        itemView,
+                        ivUserProfile
+                    )
+                    loadImage(item?.resUrls?.resFull.toString(), itemView, ivItemImage)
                     tvUserName.text = item?.resUser?.resUsername
                     tvName.text = item?.resUser?.resName
                     tvCountHeart.text = updatedCount.toString()
 
-                    if (item?.resLikedByUser!!) {
+
+                    updatedCount = if (item?.resLikedByUser!!) {
                         fab.setImageResource(R.drawable.ic_favorite_black)
+                        updatedCount?.minus(1)
                     } else {
                         fab.setImageResource(R.drawable.ic_favorite_border)
+                        updatedCount?.plus(1)
                     }
 
                     fab.setOnClickListener {
