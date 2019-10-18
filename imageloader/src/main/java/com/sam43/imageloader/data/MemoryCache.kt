@@ -42,9 +42,7 @@ internal class MemoryCache private constructor() : Cache {
          * @param capacity should not be less than 1.
          */
         fun setCapacity(capacity: Int = DEFAULT_CAPACITY) {
-            if (capacity < 1) {
-                throw IllegalArgumentException("Capacity must be greater than 0.")
-            }
+            require(capacity >= 1) { "Capacity must be greater than 0." }
             getInstance().maxCapacity = capacity
         }
 
@@ -53,9 +51,7 @@ internal class MemoryCache private constructor() : Cache {
          * @param millis should not be less than 10000 (i.e. 10 seconds).
          */
         fun setTimeout(millis: Long = DEFAULT_TIMEOUT) {
-            if (millis < 10000) {
-                throw IllegalArgumentException("Timeout must be greater than 10 seconds.")
-            }
+            require(millis >= 10000) { "Timeout must be greater than 10 seconds." }
             getInstance().timeout = millis
         }
     }

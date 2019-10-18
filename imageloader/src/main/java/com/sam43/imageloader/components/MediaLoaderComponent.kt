@@ -1,6 +1,5 @@
 package com.sam43.imageloader.components
 
-import com.sam43.imageloader.data.DiskCache
 import com.sam43.imageloader.data.MemoryCache
 import com.sam43.imageloader.modules.NetworkModule
 import com.sam43.imageloader.networks.Downloader
@@ -20,12 +19,6 @@ internal interface MediaLoaderComponent {
      * Provides MemoryCache instance.
      */
     fun getMemoryCache(): MemoryCache
-
-    /**
-     * Provides DiskCache instance.
-     */
-    fun getDiskCache(): DiskCache
-
     /**
      * Provides Downloader instance.
      */

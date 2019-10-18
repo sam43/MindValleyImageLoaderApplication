@@ -103,10 +103,10 @@ class MediaLoader<T : View> private constructor(
     /**
      * Responsible to execute the request and load the result.
      */
-    fun download(useMemoryCache: Boolean = true) {
-        if (!MediaLoaderRepository.isCached(url, useMemoryCache, this)) {
+    fun download() {
+        if (!MediaLoaderRepository.isCached(url, this)) {
             downloader =
-                MediaLoaderRepository.getDownloader(isSynchronous, url, useMemoryCache, this)
+                MediaLoaderRepository.getDownloader(isSynchronous, url, this)
         }
     }
 

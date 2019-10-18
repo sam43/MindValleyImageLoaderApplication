@@ -33,8 +33,7 @@ class DashboardFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    private val sample =
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR8wL-RvGE0G3B2W-dMd9ZZcgW8BR7nzrIgpXiWYxpio_RFvvCb"
+    private val sample = "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg"
     private lateinit var root: View
     private lateinit var dashboardViewModel: DashboardViewModel
 
