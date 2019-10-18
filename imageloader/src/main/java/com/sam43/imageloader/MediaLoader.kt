@@ -173,15 +173,9 @@ class MediaLoader<T : View> private constructor(
         }
 
         fun create(): MediaLoader<T> {
-            if (url.isEmpty()) {
-                throw IllegalArgumentException("Url should not be empty.")
-            }
-            if (!Patterns.WEB_URL.matcher(url).matches()) {
-                throw IllegalArgumentException("Invalid Url detected.")
-            }
-            if (!this::weakView.isInitialized) {
-                throw IllegalArgumentException("View should not be empty.")
-            }
+            require(url.isNotEmpty()) { "Url should not be empty." }
+            require(Patterns.WEB_URL.matcher(url).matches()) { "Invalid Url detected." }
+            require(this::weakView.isInitialized) { "View should not be empty." }
             return MediaLoader(
                 this.context.applicationContext,
                 this.url,

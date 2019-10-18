@@ -3,7 +3,9 @@ package com.sam43.mindvalleyimageloaderapplication.utils
 import android.app.Activity
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import com.google.android.material.snackbar.Snackbar
+import com.sam43.imageloader.MediaLoader
 
 fun Activity.getClassName() {
     Log.i("className", "${this.localClassName} // ${this.javaClass.simpleName}")
@@ -46,4 +48,18 @@ fun View.showSnack(message: String) {
     val snack = Snackbar
         .make(this, message, Snackbar.LENGTH_LONG)
     snack.show()
+}
+
+fun loadImage(url: String, itemView: View, imageView: ImageView) {
+    MediaLoader.Builder<ImageView>(itemView.context)
+        .load(url)
+        .into(imageView)
+        .create().download()
+}
+
+fun cancelLoadingImage(url: String, itemView: View, imageView: ImageView) {
+    MediaLoader.Builder<ImageView>(itemView.context)
+        .load(url)
+        .into(imageView)
+        .create().cancel()
 }
