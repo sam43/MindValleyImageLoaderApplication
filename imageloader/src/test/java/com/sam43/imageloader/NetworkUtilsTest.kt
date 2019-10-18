@@ -1,11 +1,6 @@
-/*
- * Created by Onkar Nene on 15/7/19 9:17 AM
- *
- * Copyright (c) 2019 Onkar Nene. All rights reserved.
- */
+package com.sam43.imageloader
 
-package com.sam43.imageloader.utilities
-
+import com.sam43.imageloader.utilities.NetworkUtils
 import org.junit.Assert
 import org.junit.Test
 import java.net.HttpURLConnection

@@ -1,11 +1,6 @@
-/*
- * Created by Onkar Nene on 14/7/19 10:30 PM
- *
- * Copyright (c) 2019 Onkar Nene. All rights reserved.
- */
+package com.sam43.imageloader
 
-package com.sam43.imageloader.data
-
+import com.sam43.imageloader.data.MemoryCache
 import org.junit.Assert
 import org.junit.Test
 

@@ -1,9 +1,3 @@
-/*
- * Created by Onkar Nene on 11/7/19 12:40 PM
- *
- * Copyright (c) 2019 Onkar Nene. All rights reserved.
- */
-
 package com.sam43.imageloader.repositories
 
 import com.sam43.imageloader.components.DaggerCacheComponent

@@ -1,19 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_dashboard"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/value_10">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageOne"
+            android:layout_width="@dimen/value_300"
+            android:layout_height="@dimen/value_150" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cancelImageOne"
+            android:layout_width="@dimen/value_40"
+            android:layout_height="@dimen/value_40"
+            android:layout_margin="@dimen/value_15"
+            android:src="@drawable/ic_cancel_red" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/value_10">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageTwo"
+            android:layout_width="@dimen/value_300"
+            android:layout_height="@dimen/value_150" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cancelImageTwo"
+            android:layout_width="@dimen/value_40"
+            android:layout_height="@dimen/value_40"
+            android:layout_margin="@dimen/value_15"
+            android:src="@drawable/ic_cancel_red" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/value_10">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageThree"
+            android:layout_width="@dimen/value_300"
+            android:layout_height="@dimen/value_150" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cancelImageThree"
+            android:layout_width="@dimen/value_40"
+            android:layout_height="@dimen/value_40"
+            android:layout_margin="@dimen/value_15"
+            android:src="@drawable/ic_cancel_red" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,6 +1,7 @@
 package com.sam43.mindvalleyimageloaderapplication.utils
 
 import android.app.Activity
+import android.content.Context
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
@@ -57,9 +58,6 @@ fun loadImage(url: String, itemView: View, imageView: ImageView) {
         .create().download()
 }
 
-fun cancelLoadingImage(url: String, itemView: View, imageView: ImageView) {
-    MediaLoader.Builder<ImageView>(itemView.context)
-        .load(url)
-        .into(imageView)
-        .create().cancel()
+fun Context.getImageLoader(url: String, imageView: ImageView): MediaLoader<ImageView> {
+    return MediaLoader.Builder<ImageView>(this).load(url).into(imageView).create()
 }

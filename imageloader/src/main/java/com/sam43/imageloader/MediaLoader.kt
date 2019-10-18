@@ -1,9 +1,3 @@
-/*
- * Created by Onkar Nene on 10/7/19 10:13 AM
- *
- * Copyright (c) 2019 Onkar Nene. All rights reserved.
- */
-
 package com.sam43.imageloader
 
 import android.content.Context
