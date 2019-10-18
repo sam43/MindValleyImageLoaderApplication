@@ -87,20 +87,41 @@ class HomeFragment : Fragment() {
                     val tvName = innerViews[R.id.tvUserName] as TextView
                     val tvCountHeart = innerViews[R.id.tvCountHeart] as TextView
                     val fab = innerViews[R.id.fab] as FloatingActionButton
+                    var updatedCount = item?.resLikes
+                    var flag = true
+
+                    tvUserName.text = item?.resUser?.resUsername
+                    tvName.text = item?.resUser?.resName
+                    tvCountHeart.text = updatedCount.toString()
+
+                    if (item?.resLikedByUser!!) {
+                        fab.setImageResource(R.drawable.ic_favorite_black)
+                    } else {
+                        fab.setImageResource(R.drawable.ic_favorite_border)
+                    }
 
                     fab.setOnClickListener {
                         /**
                          * set the liking condition and save it to session
                          * */
+                        when (flag) {
+                            true -> {
+                                fab.setImageResource(R.drawable.ic_favorite_black)
+                                updatedCount = updatedCount?.plus(1)
+                                flag = false
+                            }
+                            else -> {
+                                fab.setImageResource(R.drawable.ic_favorite_border)
+                                updatedCount = updatedCount?.minus(1)
+                                flag = true
+                            }
+                        }
+                        tvCountHeart.text = updatedCount.toString()
                     }
-                    tvUserName.text = item?.resUser?.resUsername
-                    tvName.text = item?.resUser?.resName
-                    tvCountHeart.text = item?.resLikes.toString()
                 }
                 .into(root.rvImageList)
         }
         root.rvImageList.setHasFixedSize(true)
         root.rvImageList.layoutManager = LinearLayoutManager(context)
-        //root.rvImageList.addItemDecoration(GridItemDecoration(10, 2))
     }
 }
