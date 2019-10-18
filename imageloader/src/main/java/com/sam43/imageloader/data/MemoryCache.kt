@@ -1,9 +1,3 @@
-/*
- * Created by Onkar Nene on 13/7/19 11:56 PM
- *
- * Copyright (c) 2019 Onkar Nene. All rights reserved.
- */
-
 package com.sam43.imageloader.data
 
 import androidx.annotation.VisibleForTesting

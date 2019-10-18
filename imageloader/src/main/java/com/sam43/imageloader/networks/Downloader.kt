@@ -1,9 +1,3 @@
-/*
- * Created by Onkar Nene on 12/7/19 11:02 AM
- *
- * Copyright (c) 2019 Onkar Nene. All rights reserved.
- */
-
 package com.sam43.imageloader.networks
 
 import com.sam43.imageloader.data.Cache

@@ -1,9 +1,3 @@
-/*
- * Created by Onkar Nene on 12/7/19 3:24 PM
- *
- * Copyright (c) 2019 Onkar Nene. All rights reserved.
- */
-
 package com.sam43.imageloader.utilities
 
 const val CONTENT_TYPE_JPG = "image/jpg"

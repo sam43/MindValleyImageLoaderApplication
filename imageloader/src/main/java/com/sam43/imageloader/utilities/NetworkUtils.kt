@@ -1,9 +1,3 @@
-/*
- * Created by Onkar Nene on 10/7/19 5:57 PM
- *
- * Copyright (c) 2019 Onkar Nene. All rights reserved.
- */
-
 package com.sam43.imageloader.utilities
 
 import okhttp3.Call

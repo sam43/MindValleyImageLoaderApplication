@@ -1,9 +1,3 @@
-/*
- * Created by Onkar Nene on 11/7/19 9:20 AM
- *
- * Copyright (c) 2019 Onkar Nene. All rights reserved.
- */
-
 package com.sam43.imageloader.networks
 
 import androidx.annotation.WorkerThread

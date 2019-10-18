@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.sam43.mindvalleyimageloaderapplication.R
 import com.sam43.mindvalleyimageloaderapplication.model.GenericReS
 import com.sam43.mindvalleyimageloaderapplication.utils.RecyclerAdapterUtil
-import com.sam43.mindvalleyimageloaderapplication.utils.loadImage
+import com.sam43.mindvalleyimageloaderapplication.utils.getImageLoader
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomeFragment : Fragment() {
@@ -73,12 +73,14 @@ class HomeFragment : Fragment() {
                     var updatedCount = item?.resLikes
                     var flag = true
 
-                    loadImage(
+                    itemView.context.getImageLoader(
                         item?.resUser?.resProfileImage?.resMedium.toString(),
-                        itemView,
                         ivUserProfile
-                    )
-                    loadImage(item?.resUrls?.resFull.toString(), itemView, ivItemImage)
+                    ).download(true)
+                    itemView.context.getImageLoader(
+                        item?.resUrls?.resFull.toString(),
+                        ivItemImage
+                    ).download(true)
                     tvUserName.text = item?.resUser?.resUsername
                     tvName.text = item?.resUser?.resName
                     tvCountHeart.text = updatedCount.toString()
