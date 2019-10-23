@@ -46,6 +46,8 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navView.setOnNavigationItemReselectedListener { /*stop reselecting same tab again*/ }
     }
 
     private fun initSession() {

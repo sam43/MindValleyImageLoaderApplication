@@ -32,9 +32,7 @@ internal object NetworkUtils {
      * Builds and returns new http call for execution.
      */
     fun getCaller(url: String): Call {
-        if (url.isEmpty() || url.isBlank()) {
-            throw IllegalArgumentException("Url should not be empty or blank.")
-        }
+        require(!(url.isEmpty() || url.isBlank())) { "Url should not be empty or blank." }
         val request = Request.Builder().url(url).get().build()
         return okHttpClient.newCall(request)
     }

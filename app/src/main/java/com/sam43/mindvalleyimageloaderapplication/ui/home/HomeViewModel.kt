@@ -13,8 +13,8 @@ class HomeViewModel : ViewModelFactory() {
 
     fun fetchImagesFromServer() {
         scope.launch {
-            val popularMovies = repository.getImages()
-            unSplashedImagesLiveData.postValue(popularMovies)
+            val list = repository.getImages()
+            unSplashedImagesLiveData.postValue(list)
         }
     }
 

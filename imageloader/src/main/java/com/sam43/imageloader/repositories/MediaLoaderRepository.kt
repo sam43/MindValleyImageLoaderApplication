@@ -9,8 +9,6 @@ internal object MediaLoaderRepository {
 
     private val lock = Any()
 
-    //private val component = Dagge.builder().cacheComponent(DaggerCacheComponent.create()).build()
-
     private val component =
         DaggerMediaLoaderComponent.builder().cacheComponent(DaggerCacheComponent.create()).build()
 
