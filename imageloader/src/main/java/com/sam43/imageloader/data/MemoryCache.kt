@@ -20,7 +20,7 @@ internal class MemoryCache private constructor() : Cache {
         /**
          * Default capacity of map.
          */
-        private const val DEFAULT_CAPACITY: Int = 100
+        private const val DEFAULT_CAPACITY: Int = 1000
 
         @Volatile
         private var memoryCache: MemoryCache? = null
